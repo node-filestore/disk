@@ -14,11 +14,11 @@ npm install --save @filestore/disk
 const Disk = require('@filestore/disk')
 const fs = require('fs')
 
-const filestore = new S3({ path: 'uploads' })
+const filestore = new Disk({ path: 'uploads' })
 const file = fs.createReadStream('my-file.txt')
 
 filestore.put('my-file.txt', file).then(() => {
-  // "my-file.txt" is now copied to the S3 directory "uploads"
+  // "my-file.txt" is now copied to the directory "uploads"
 })
 ```
 
